@@ -1,8 +1,11 @@
 def cipher(c):
-  if ('a'<=c)&(c<='z'):
-    c=str(219-c.stoi())
-  return c
+  res=""
+  for i in c:
+    if 'a'<=i<='z':
+      res=res+chr(219-ord(i))
+    else:
+      res=res+i
+  return res
 
 s='abcABC'
-s=[cipher(i) for i in s]
-print(s)
+print(cipher(s))
